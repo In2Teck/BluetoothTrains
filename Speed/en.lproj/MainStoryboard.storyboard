@@ -4,44 +4,6 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="2083"/>
     </dependencies>
     <scenes>
-        <!--Splash View Controller - splash-->
-        <scene sceneID="jQg-Hi-nku">
-            <objects>
-                <viewController title="splash" id="BOF-BJ-xPA" customClass="SplashViewController" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="JUP-U5-lNl">
-                        <rect key="frame" x="0.0" y="64" width="1024" height="704"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VH4-Tb-xzx">
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="CLICK TO DASHBOARD">
-                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <state key="highlighted">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="lru-47-KpG" kind="push" id="lA0-r2-hZq"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="VH4-Tb-xzx" firstAttribute="top" secondItem="JUP-U5-lNl" secondAttribute="top" constant="280" id="DIc-Wa-ojJ"/>
-                            <constraint firstItem="VH4-Tb-xzx" firstAttribute="leading" secondItem="JUP-U5-lNl" secondAttribute="leading" constant="461" id="mXD-5B-n9F"/>
-                        </constraints>
-                        <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="yxm-sw-p14"/>
-                    <connections>
-                        <outlet property="goToDashboardBtn" destination="VH4-Tb-xzx" id="6Yc-lv-jTd"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="zzv-FY-KAQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="307" y="349"/>
-        </scene>
         <!--Dashboard View Controller - dashboard-->
         <scene sceneID="1tP-2s-ZGI">
             <objects>
@@ -70,10 +32,11 @@
                             <outlet property="delegate" destination="lru-47-KpG" id="E8S-Hg-Pzu"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" id="U9o-uu-V3b"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mkP-Wd-4cn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1610" y="349"/>
+            <point key="canvasLocation" x="1746" y="-835"/>
         </scene>
         <!--Detail View Controller - detail-->
         <scene sceneID="lAu-6A-Aw4">
@@ -103,7 +66,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oMX-Dy-MO8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3016" y="349"/>
+            <point key="canvasLocation" x="3112" y="-835"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="BIn-uX-fBz">
@@ -117,7 +80,7 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="BOF-BJ-xPA" kind="relationship" relationship="rootViewController" id="bBE-nb-0xt"/>
+                        <segue destination="lru-47-KpG" kind="relationship" relationship="rootViewController" id="erH-k5-XNI"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qdq-Bw-ics" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -125,6 +88,20 @@
             <point key="canvasLocation" x="325" y="-835"/>
         </scene>
     </scenes>
+    <classes>
+        <class className="DashboardViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/DashboardViewController.h"/>
+        </class>
+        <class className="DetailViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/DetailViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="trainLabel" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="NSLayoutConstraint" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar" statusBarStyle="blackTranslucent"/>
         <simulatedOrientationMetrics key="orientation"/>
