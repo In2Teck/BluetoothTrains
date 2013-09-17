@@ -1,13 +1,15 @@
 //
-//  ViewController.h
+//  SplashViewController.m
 //  Speed
 //
 //  Created by Benjamín Hernández on 13/09/13.
 //  Copyright (c) 2013 Benjamín Hernández. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "SplashViewController.h"
 
-@interface ViewController : UIViewController
+@implementation SplashViewController
+
+@synthesize goToDashboardBtn;
 
 @end
