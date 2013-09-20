@@ -28,7 +28,14 @@
 {
     [super viewDidLoad];
     
-    self.title = @"Home";
+    self.title = @"Train List";
+    
+    // Navigation
+    self.navigationItem.leftBarButtonItem = self.editButtonItem;
+    
+    UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(insertNewTrain)];
+    
+    self.navigationItem.rightBarButtonItem = addButton;
 }
 
 -(void)viewWillAppear:(BOOL)animated{
@@ -42,6 +49,21 @@
 {
     [super viewDidUnload];
     // Release any retained subviews of the main view.
+}
+
+- (void)setEditing:(BOOL)editing animated:(BOOL)animated
+{
+    [super setEditing:editing animated:animated];
+    [[self tableView] setEditing:editing animated:animated];
+}
+
+- (void)insertNewTrain
+{
+    // Display UIAlertView
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Enter name" message:@"" delegate:self cancelButtonTitle:@"cancel" otherButtonTitles:@"Ok", nil];
+    
+    alert.alertViewStyle = UIAlertViewStylePlainTextInput;
+    [alert show];
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
@@ -89,6 +111,19 @@
     
 }
 
+- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return YES;
+}
+
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (editingStyle == UITableViewCellEditingStyleDelete){
+        [[DataHandling sharedInstance] removeTrainAtIndex:indexPath.row];
+        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+    }
+}
+
 - (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     
@@ -110,6 +145,20 @@
     
 }
 
+# pragma mark UIAlertViewDelegateMethods
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    // Only do if the user clicks 'OK'
+    if (buttonIndex == 1){
+        NSString *tmpText = [alertView textFieldAtIndex:0].text;
+     
+        [[DataHandling sharedInstance] addTrain:[[NSMutableArray alloc] initWithObjects:tmpText, @"Classic", @"40", @"ON", @"MAC", nil] ];
+        
+        NSIndexPath *indexPath = [NSIndexPath indexPathForRow:[[[DataHandling sharedInstance] tableData] count]-1 inSection:0];
+        [[self tableView] insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
+    }
+}
 
 @end
 

@@ -9,6 +9,6 @@
 #import <UIKit/UIKit.h>
 #import "DataHandling.h"
 
-@interface DashboardViewController : UITableViewController
+@interface DashboardViewController : UITableViewController <UIAlertViewDelegate>
 
 @end
