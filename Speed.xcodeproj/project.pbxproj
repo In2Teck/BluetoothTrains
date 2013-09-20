@@ -21,6 +21,8 @@
 		C7445E2717E3C461009E9E96 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C7445E2617E3C461009E9E96 /* DetailViewController.m */; };
 		C7445E2B17E815A7009E9E96 /* BEELogo-Landscape.png in Resources */ = {isa = PBXBuildFile; fileRef = C7445E2917E815A7009E9E96 /* BEELogo-Landscape.png */; };
 		C7445E2C17E815A7009E9E96 /* BEELogo-Landscape@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C7445E2A17E815A7009E9E96 /* BEELogo-Landscape@2x.png */; };
+		C7445E2F17E934D0009E9E96 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C7445E2E17E934D0009E9E96 /* SettingsViewController.m */; };
+		C7445E3317EA633F009E9E96 /* DataHandling.m in Sources */ = {isa = PBXBuildFile; fileRef = C7445E3217EA633F009E9E96 /* DataHandling.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +46,10 @@
 		C7445E2617E3C461009E9E96 /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
 		C7445E2917E815A7009E9E96 /* BEELogo-Landscape.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "BEELogo-Landscape.png"; sourceTree = "<group>"; };
 		C7445E2A17E815A7009E9E96 /* BEELogo-Landscape@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "BEELogo-Landscape@2x.png"; sourceTree = "<group>"; };
+		C7445E2D17E934D0009E9E96 /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
+		C7445E2E17E934D0009E9E96 /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
+		C7445E3117EA633F009E9E96 /* DataHandling.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataHandling.h; sourceTree = "<group>"; };
+		C7445E3217EA633F009E9E96 /* DataHandling.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataHandling.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +96,7 @@
 		C7445E0217E3BC57009E9E96 /* Speed */ = {
 			isa = PBXGroup;
 			children = (
+				C7445E3017EA62E3009E9E96 /* data */,
 				C7445E2217E3C2D2009E9E96 /* DashboardViewController.h */,
 				C7445E2317E3C2D2009E9E96 /* DashboardViewController.m */,
 				C7445E0B17E3BC57009E9E96 /* AppDelegate.h */,
@@ -98,6 +105,8 @@
 				C7445E0317E3BC57009E9E96 /* Supporting Files */,
 				C7445E2517E3C461009E9E96 /* DetailViewController.h */,
 				C7445E2617E3C461009E9E96 /* DetailViewController.m */,
+				C7445E2D17E934D0009E9E96 /* SettingsViewController.h */,
+				C7445E2E17E934D0009E9E96 /* SettingsViewController.m */,
 			);
 			path = Speed;
 			sourceTree = "<group>";
@@ -124,6 +133,15 @@
 				C7445E2A17E815A7009E9E96 /* BEELogo-Landscape@2x.png */,
 			);
 			path = img;
+			sourceTree = "<group>";
+		};
+		C7445E3017EA62E3009E9E96 /* data */ = {
+			isa = PBXGroup;
+			children = (
+				C7445E3117EA633F009E9E96 /* DataHandling.h */,
+				C7445E3217EA633F009E9E96 /* DataHandling.m */,
+			);
+			name = data;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -198,6 +216,8 @@
 				C7445E0D17E3BC57009E9E96 /* AppDelegate.m in Sources */,
 				C7445E2417E3C2D2009E9E96 /* DashboardViewController.m in Sources */,
 				C7445E2717E3C461009E9E96 /* DetailViewController.m in Sources */,
+				C7445E2F17E934D0009E9E96 /* SettingsViewController.m in Sources */,
+				C7445E3317EA633F009E9E96 /* DataHandling.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -235,7 +255,8 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Pat Weston (KZ47W57K3V)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Pat Weston (KZ47W57K3V)";
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -250,6 +271,8 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				ONLY_ACTIVE_ARCH = YES;
+				PROVISIONING_PROFILE = "B03C86A7-5649-41B1-91F3-E6660B76D132";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "B03C86A7-5649-41B1-91F3-E6660B76D132";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = 2;
 			};
@@ -267,7 +290,8 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Pat Weston (KZ47W57K3V)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Pat Weston (KZ47W57K3V)";
 				COPY_PHASE_STRIP = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
@@ -275,6 +299,8 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				PROVISIONING_PROFILE = "B03C86A7-5649-41B1-91F3-E6660B76D132";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "B03C86A7-5649-41B1-91F3-E6660B76D132";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = 2;
 				VALIDATE_PRODUCT = YES;

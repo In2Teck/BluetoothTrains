@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="12E55" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" initialViewController="srK-iv-uCp">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="12E55" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" initialViewController="d7z-RO-PZh">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="2083"/>
     </dependencies>
@@ -9,7 +9,7 @@
             <objects>
                 <tableViewController title="dashboard" id="lru-47-KpG" customClass="DashboardViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="tKW-7r-dEw">
-                        <rect key="frame" x="0.0" y="64" width="1024" height="704"/>
+                        <rect key="frame" x="0.0" y="64" width="1024" height="655"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
@@ -36,14 +36,14 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mkP-Wd-4cn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1746" y="-835"/>
+            <point key="canvasLocation" x="2546" y="-2379"/>
         </scene>
         <!--Detail View Controller - detail-->
         <scene sceneID="lAu-6A-Aw4">
             <objects>
                 <viewController title="detail" id="WIo-TX-Lu4" customClass="DetailViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="mvf-Cf-8ow">
-                        <rect key="frame" x="0.0" y="64" width="1024" height="704"/>
+                        <rect key="frame" x="0.0" y="64" width="1024" height="655"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zqX-tR-hPm">
@@ -66,12 +66,60 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oMX-Dy-MO8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3112" y="-835"/>
+            <point key="canvasLocation" x="3936" y="-2371"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Tab Bar Controller-->
+        <scene sceneID="X9B-9W-dB2">
+            <objects>
+                <tabBarController definesPresentationContext="YES" id="d7z-RO-PZh" sceneMemberID="viewController">
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="2k9-fz-Aq0">
+                        <rect key="frame" x="129" y="330" width="163" height="49"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="srK-iv-uCp" kind="relationship" relationship="viewControllers" id="MsS-0N-n9A"/>
+                        <segue destination="GT6-5g-DvX" kind="relationship" relationship="viewControllers" id="V5r-Wq-znQ"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6Em-O5-vR6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-88" y="-1533"/>
+        </scene>
+        <!--Settings View Controller - Settings-->
+        <scene sceneID="MI2-OT-9LD">
+            <objects>
+                <viewController title="Settings" id="GT6-5g-DvX" customClass="SettingsViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="6hC-El-2cd">
+                        <rect key="frame" x="0.0" y="20" width="1024" height="699"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kzr-X5-6nl">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="kzr-X5-6nl" secondAttribute="bottom" constant="328" id="NlO-BH-hTW"/>
+                            <constraint firstItem="kzr-X5-6nl" firstAttribute="leading" secondItem="6hC-El-2cd" secondAttribute="leading" constant="428" id="dme-qr-Sef"/>
+                        </constraints>
+                        <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Settings" id="JpI-F7-MFy"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vU9-E6-sZC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1160" y="-705"/>
+        </scene>
+        <!--Navigation Controller - Home-->
         <scene sceneID="BIn-uX-fBz">
             <objects>
                 <navigationController id="srK-iv-uCp" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Home" id="btv-OF-BG9"/>
                     <toolbarItems/>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="9M7-jv-Jxj">
@@ -85,23 +133,9 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qdq-Bw-ics" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="325" y="-835"/>
+            <point key="canvasLocation" x="1149" y="-2379"/>
         </scene>
     </scenes>
-    <classes>
-        <class className="DashboardViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/DashboardViewController.h"/>
-        </class>
-        <class className="DetailViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/DetailViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="trainLabel" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="NSLayoutConstraint" superclassName="NSObject">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar" statusBarStyle="blackTranslucent"/>
         <simulatedOrientationMetrics key="orientation"/>

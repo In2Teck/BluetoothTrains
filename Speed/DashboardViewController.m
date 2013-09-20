@@ -14,7 +14,6 @@
 @end
 
 @implementation DashboardViewController
-@synthesize tableData;
 
 -(id)initWithStyle:(UITableViewStyle)style
 {
@@ -28,17 +27,21 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
-    tableData = [[NSArray alloc ] initWithObjects:@"Blue Train", @"Modern Train", @"MAC Train", @"Hamburg Rail", @"Sino Trail G", @"Last Train", nil];
     
-    self.title = @"Train List";
+    self.title = @"Home";
+}
+
+-(void)viewWillAppear:(BOOL)animated{
+    
+    [super viewWillAppear:animated];
+    
+    [[self tableView] reloadData];
 }
 
 - (void)viewDidUnload
 {
     [super viewDidUnload];
     // Release any retained subviews of the main view.
-    // e.g. self.myOutlet = nil;
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
@@ -55,9 +58,8 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    
     // Return the number of rows in the section.
-    return tableData.count;
+    return [[[DataHandling sharedInstance] tableData] count];
 }
 
 
@@ -74,13 +76,13 @@
     if (cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
     }
+    if ([[DataHandling sharedInstance] tableData] > 0){
+        //Set the text attribute to whatever we are currently looking at in our array
+        cell.textLabel.text = [[[[DataHandling sharedInstance] tableData] objectAtIndex:indexPath.row] objectAtIndex:0];
     
-    //Set the text attribute to whatever we are currently looking at in our array
-    cell.textLabel.text = [tableData objectAtIndex:indexPath.row];
-    
-    //Set the detail disclosure indicator
-    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-    
+        //Set the detail disclosure indicator
+        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+    }
     
     //Return the cell
     return cell;
@@ -101,8 +103,7 @@
     
     //Get the indexpath
     NSIndexPath *path = [self.tableView indexPathForSelectedRow];
-    
-    NSString *train = [tableData objectAtIndex:path.row];
+    NSString *train = [[[[DataHandling sharedInstance] tableData] objectAtIndex:path.row] objectAtIndex:0];
     
     detail.trainNumber = path.row;
     detail.trainName = train;
