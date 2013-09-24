@@ -10,9 +10,7 @@
 
 @implementation DataHandling
 
-@synthesize tableData;
-@synthesize paths;
-@synthesize stringsPlistPath;
+@synthesize tableData, paths, stringsPlistPath;
 
 static DataHandling *sharedDataInstance = nil;
 
@@ -28,7 +26,7 @@ static DataHandling *sharedDataInstance = nil;
 - (id) init
 {
     paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-    stringsPlistPath = [[paths objectAtIndex:0] stringByAppendingPathComponent:@"train.plist"];
+    stringsPlistPath = [[paths objectAtIndex:0] stringByAppendingPathComponent:@"train_objects.plist"];
     [self loadTextFile];
     
     return self;
@@ -52,7 +50,8 @@ static DataHandling *sharedDataInstance = nil;
 
 - (BOOL) addTrain:(Train *)train
 {
-    [tableData addObject: train];
+    NSData *objData = [NSKeyedArchiver archivedDataWithRootObject:train];
+    [tableData addObject: objData];
     [tableData writeToFile:stringsPlistPath atomically: YES];
 
     return YES;
@@ -69,7 +68,11 @@ static DataHandling *sharedDataInstance = nil;
 }
 
 - (Train*) getTrainAtIndex:(NSUInteger) index{
-    return [tableData objectAtIndex: index];
+    
+    NSData *objData = [tableData objectAtIndex:index];
+    Train *train = [NSKeyedUnarchiver unarchiveObjectWithData:objData];
+    return train;
+    
 }
 
 @end

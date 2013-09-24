@@ -41,7 +41,6 @@
 -(void)viewWillAppear:(BOOL)animated{
     
     [super viewWillAppear:animated];
-    
     [[self tableView] reloadData];
 }
 
@@ -57,13 +56,16 @@
     [[self tableView] setEditing:editing animated:animated];
 }
 
+
 - (void)insertNewTrain
 {
+    
+    [self performSegueWithIdentifier: @"NewItemSegue" sender: self];
     // Display UIAlertView
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Enter name" message:@"" delegate:self cancelButtonTitle:@"cancel" otherButtonTitles:@"Ok", nil];
+    /*UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Enter name" message:@"" delegate:self cancelButtonTitle:@"cancel" otherButtonTitles:@"Ok", nil];
     
     alert.alertViewStyle = UIAlertViewStylePlainTextInput;
-    [alert show];
+    [alert show];*/
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
@@ -133,6 +135,8 @@
     }
 }
 
+/* UNUSED METHODS
+
 - (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     
@@ -152,7 +156,10 @@
     detail.trainNumber = path.row;
     detail.trainName = train.name;
     
+    
 }
+ 
+
 
 # pragma mark UIAlertViewDelegateMethods
 
@@ -170,6 +177,8 @@
         [[self tableView] insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
     }
 }
+
+ */
 
 @end
 

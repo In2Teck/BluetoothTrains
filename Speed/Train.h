@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 
 // Train: name, style, speed, max speed, switch, mac address, low battery
-@interface Train : NSObject
+@interface Train : NSObject  <NSCoding>
 
 @property (strong, nonatomic) NSString *name;
 @property (strong, nonatomic) NSString *style;

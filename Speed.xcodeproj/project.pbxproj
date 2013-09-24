@@ -18,7 +18,6 @@
 		C7445E1317E3BC57009E9E96 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C7445E1217E3BC57009E9E96 /* Default-568h@2x.png */; };
 		C7445E1617E3BC57009E9E96 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C7445E1417E3BC57009E9E96 /* MainStoryboard.storyboard */; };
 		C7445E2417E3C2D2009E9E96 /* DashboardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C7445E2317E3C2D2009E9E96 /* DashboardViewController.m */; };
-		C7445E2717E3C461009E9E96 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C7445E2617E3C461009E9E96 /* DetailViewController.m */; };
 		C7445E2B17E815A7009E9E96 /* BEELogo-Landscape.png in Resources */ = {isa = PBXBuildFile; fileRef = C7445E2917E815A7009E9E96 /* BEELogo-Landscape.png */; };
 		C7445E2C17E815A7009E9E96 /* BEELogo-Landscape@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C7445E2A17E815A7009E9E96 /* BEELogo-Landscape@2x.png */; };
 		C7445E2F17E934D0009E9E96 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C7445E2E17E934D0009E9E96 /* SettingsViewController.m */; };
@@ -26,6 +25,7 @@
 		C7CCCA2417F0E9AA00A6E0A1 /* low_battery.png in Resources */ = {isa = PBXBuildFile; fileRef = C7CCCA2317F0E9AA00A6E0A1 /* low_battery.png */; };
 		C7CCCA2717F0EC2C00A6E0A1 /* TrainCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C7CCCA2617F0EC2C00A6E0A1 /* TrainCell.m */; };
 		C7CCCA2A17F10C3600A6E0A1 /* Train.m in Sources */ = {isa = PBXBuildFile; fileRef = C7CCCA2917F10C3600A6E0A1 /* Train.m */; };
+		C7CCCA2D17F1DFA800A6E0A1 /* NewItemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C7CCCA2C17F1DFA800A6E0A1 /* NewItemViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,8 +45,6 @@
 		C7445E1517E3BC57009E9E96 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
 		C7445E2217E3C2D2009E9E96 /* DashboardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DashboardViewController.h; sourceTree = "<group>"; };
 		C7445E2317E3C2D2009E9E96 /* DashboardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DashboardViewController.m; sourceTree = "<group>"; };
-		C7445E2517E3C461009E9E96 /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
-		C7445E2617E3C461009E9E96 /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
 		C7445E2917E815A7009E9E96 /* BEELogo-Landscape.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "BEELogo-Landscape.png"; sourceTree = "<group>"; };
 		C7445E2A17E815A7009E9E96 /* BEELogo-Landscape@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "BEELogo-Landscape@2x.png"; sourceTree = "<group>"; };
 		C7445E2D17E934D0009E9E96 /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
@@ -58,6 +56,8 @@
 		C7CCCA2617F0EC2C00A6E0A1 /* TrainCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrainCell.m; sourceTree = "<group>"; };
 		C7CCCA2817F10C3600A6E0A1 /* Train.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Train.h; sourceTree = "<group>"; };
 		C7CCCA2917F10C3600A6E0A1 /* Train.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Train.m; sourceTree = "<group>"; };
+		C7CCCA2B17F1DFA800A6E0A1 /* NewItemViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewItemViewController.h; sourceTree = "<group>"; };
+		C7CCCA2C17F1DFA800A6E0A1 /* NewItemViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewItemViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,10 +113,10 @@
 				C7445E0C17E3BC57009E9E96 /* AppDelegate.m */,
 				C7445E1417E3BC57009E9E96 /* MainStoryboard.storyboard */,
 				C7445E0317E3BC57009E9E96 /* Supporting Files */,
-				C7445E2517E3C461009E9E96 /* DetailViewController.h */,
-				C7445E2617E3C461009E9E96 /* DetailViewController.m */,
 				C7445E2D17E934D0009E9E96 /* SettingsViewController.h */,
 				C7445E2E17E934D0009E9E96 /* SettingsViewController.m */,
+				C7CCCA2B17F1DFA800A6E0A1 /* NewItemViewController.h */,
+				C7CCCA2C17F1DFA800A6E0A1 /* NewItemViewController.m */,
 			);
 			path = Speed;
 			sourceTree = "<group>";
@@ -229,11 +229,11 @@
 				C7445E0917E3BC57009E9E96 /* main.m in Sources */,
 				C7445E0D17E3BC57009E9E96 /* AppDelegate.m in Sources */,
 				C7445E2417E3C2D2009E9E96 /* DashboardViewController.m in Sources */,
-				C7445E2717E3C461009E9E96 /* DetailViewController.m in Sources */,
 				C7445E2F17E934D0009E9E96 /* SettingsViewController.m in Sources */,
 				C7445E3317EA633F009E9E96 /* DataHandling.m in Sources */,
 				C7CCCA2717F0EC2C00A6E0A1 /* TrainCell.m in Sources */,
 				C7CCCA2A17F10C3600A6E0A1 /* Train.m in Sources */,
+				C7CCCA2D17F1DFA800A6E0A1 /* NewItemViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
