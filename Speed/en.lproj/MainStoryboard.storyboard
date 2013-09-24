@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="12E55" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" initialViewController="d7z-RO-PZh">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="12F37" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" initialViewController="d7z-RO-PZh">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="2083"/>
     </dependencies>
@@ -8,21 +8,57 @@
         <scene sceneID="1tP-2s-ZGI">
             <objects>
                 <tableViewController title="dashboard" id="lru-47-KpG" customClass="DashboardViewController" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="tKW-7r-dEw">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="69" sectionHeaderHeight="22" sectionFooterHeight="22" id="tKW-7r-dEw">
                         <rect key="frame" x="0.0" y="64" width="1024" height="655"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" id="OBt-Mv-jQ2">
-                                <rect key="frame" x="0.0" y="22" width="1024" height="44"/>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" rowHeight="69" id="OBt-Mv-jQ2" customClass="TrainCell">
+                                <rect key="frame" x="0.0" y="22" width="1024" height="69"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="1004" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="1024" height="68"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <switch opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nBi-5Q-lQr"/>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="TrainName" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gax-Hb-kik">
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </label>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="1780" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mGa-Iu-Rnj">
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="62" id="Ge7-Fx-VTP"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </label>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="low_battery.png" translatesAutoresizingMaskIntoConstraints="NO" id="NqO-TJ-49J">
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="29" id="kUs-jJ-PdG"/>
+                                                <constraint firstAttribute="width" constant="45" id="rxm-9W-KTR"/>
+                                            </constraints>
+                                        </imageView>
+                                    </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
+                                <constraints>
+                                    <constraint firstItem="mGa-Iu-Rnj" firstAttribute="leading" secondItem="OBt-Mv-jQ2" secondAttribute="leading" constant="298" id="1Z9-Ye-rfT"/>
+                                    <constraint firstItem="mGa-Iu-Rnj" firstAttribute="top" secondItem="OBt-Mv-jQ2" secondAttribute="top" constant="10" id="4iH-wf-1Pp"/>
+                                    <constraint firstAttribute="trailing" secondItem="nBi-5Q-lQr" secondAttribute="trailing" constant="125" id="6yN-vg-apz"/>
+                                    <constraint firstItem="mGa-Iu-Rnj" firstAttribute="baseline" secondItem="gax-Hb-kik" secondAttribute="baseline" type="default" id="Ytk-6F-hs8"/>
+                                    <constraint firstItem="gax-Hb-kik" firstAttribute="leading" secondItem="OBt-Mv-jQ2" secondAttribute="leading" constant="461" id="aSk-xl-S5j"/>
+                                    <constraint firstItem="NqO-TJ-49J" firstAttribute="leading" secondItem="OBt-Mv-jQ2" secondAttribute="leading" constant="69" id="dyk-sF-Hm8"/>
+                                    <constraint firstItem="NqO-TJ-49J" firstAttribute="top" secondItem="OBt-Mv-jQ2" secondAttribute="top" constant="19" id="xUd-Hm-Q4d"/>
+                                    <constraint firstItem="nBi-5Q-lQr" firstAttribute="top" secondItem="NqO-TJ-49J" secondAttribute="top" type="default" id="xnA-ov-NMh"/>
+                                </constraints>
                                 <connections>
+                                    <outlet property="LowBatteryImage" destination="NqO-TJ-49J" id="pJS-VZ-ngU"/>
+                                    <outlet property="OnOffSwitch" destination="nBi-5Q-lQr" id="nY7-jf-11E"/>
+                                    <outlet property="SpeedLabel" destination="mGa-Iu-Rnj" id="1sr-T3-vSh"/>
+                                    <outlet property="TrainNameLabel" destination="gax-Hb-kik" id="rhv-xS-wuL"/>
                                     <segue destination="WIo-TX-Lu4" kind="push" id="elE-De-aFy"/>
                                 </connections>
                             </tableViewCell>
@@ -36,7 +72,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mkP-Wd-4cn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2546" y="-2379"/>
+            <point key="canvasLocation" x="2489" y="-2379"/>
         </scene>
         <!--Detail View Controller - detail-->
         <scene sceneID="lAu-6A-Aw4">
@@ -66,13 +102,13 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oMX-Dy-MO8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3936" y="-2371"/>
+            <point key="canvasLocation" x="3937" y="-2379"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="X9B-9W-dB2">
             <objects>
                 <tabBarController definesPresentationContext="YES" id="d7z-RO-PZh" sceneMemberID="viewController">
-                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <nil key="simulatedBottomBarMetrics"/>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="2k9-fz-Aq0">
                         <rect key="frame" x="129" y="330" width="163" height="49"/>
@@ -136,6 +172,35 @@
             <point key="canvasLocation" x="1149" y="-2379"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="low_battery.png" width="224" height="150"/>
+    </resources>
+    <classes>
+        <class className="DashboardViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/DashboardViewController.h"/>
+        </class>
+        <class className="DetailViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/DetailViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="trainLabel" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="NSLayoutConstraint" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+        <class className="SettingsViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SettingsViewController.h"/>
+        </class>
+        <class className="TrainCell" superclassName="UITableViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/TrainCell.h"/>
+            <relationships>
+                <relationship kind="outlet" name="LowBatteryImage" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="OnOffSwitch" candidateClass="UISwitch"/>
+                <relationship kind="outlet" name="SpeedLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="TrainNameLabel" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar" statusBarStyle="blackTranslucent"/>
         <simulatedOrientationMetrics key="orientation"/>

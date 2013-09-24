@@ -7,13 +7,13 @@
 //
 
 #import "DashboardViewController.h"
-#import "DetailViewController.h"
 
 @interface DashboardViewController ()
 
 @end
 
 @implementation DashboardViewController
+
 
 -(id)initWithStyle:(UITableViewStyle)style
 {
@@ -92,18 +92,27 @@
     static NSString *CellIdentifier = @"Cell";
     
     //Check to see if we can reuse a cell from a row that has just rolled off the screen
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    TrainCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     
     //If there are no cells to be reused, create a new cell
     if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+        cell = [[TrainCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+
     }
+    // Train: name, style, speed, max speed, switch, mac address, low battery
     if ([[DataHandling sharedInstance] tableData] > 0){
         //Set the text attribute to whatever we are currently looking at in our array
-        cell.textLabel.text = [[[[DataHandling sharedInstance] tableData] objectAtIndex:indexPath.row] objectAtIndex:0];
-    
+        Train *train = [[DataHandling sharedInstance] getTrainAtIndex:indexPath.row];
+        cell.TrainNameLabel.text = train.name;
+        cell.SpeedLabel.text = [NSString stringWithFormat:@"%d", train.speed];
+        if ( train.speed > train.maxSpeed) {
+            cell.SpeedLabel.textColor = [UIColor redColor];
+        }
+        cell.LowBatteryImage.alpha = train.lowBattery ? 1 : 0;
+        cell.OnOffSwitch.on = train.onOff;
+        
         //Set the detail disclosure indicator
-        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+        //cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     }
     
     //Return the cell
@@ -138,10 +147,10 @@
     
     //Get the indexpath
     NSIndexPath *path = [self.tableView indexPathForSelectedRow];
-    NSString *train = [[[[DataHandling sharedInstance] tableData] objectAtIndex:path.row] objectAtIndex:0];
+    Train *train = [[DataHandling sharedInstance] getTrainAtIndex:path.row];
     
     detail.trainNumber = path.row;
-    detail.trainName = train;
+    detail.trainName = train.name;
     
 }
 
@@ -153,7 +162,9 @@
     if (buttonIndex == 1){
         NSString *tmpText = [alertView textFieldAtIndex:0].text;
      
-        [[DataHandling sharedInstance] addTrain:[[NSMutableArray alloc] initWithObjects:tmpText, @"Classic", @"40", @"ON", @"MAC", nil] ];
+        // Train: name, style, speed, max speed, switch, mac address, low battery
+        Train *train = [[Train alloc] initWithName:tmpText style:@"Classic" speed:110 maxSpeed:20 onOff:NO lowBattery:NO macAddress:@"MAC"];
+        [[DataHandling sharedInstance] addTrain:train];
         
         NSIndexPath *indexPath = [NSIndexPath indexPathForRow:[[[DataHandling sharedInstance] tableData] count]-1 inSection:0];
         [[self tableView] insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];

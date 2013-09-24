@@ -50,7 +50,7 @@ static DataHandling *sharedDataInstance = nil;
     }
 }
 
-- (BOOL) addTrain:(NSMutableArray *)train
+- (BOOL) addTrain:(Train *)train
 {
     [tableData addObject: train];
     [tableData writeToFile:stringsPlistPath atomically: YES];
@@ -66,6 +66,10 @@ static DataHandling *sharedDataInstance = nil;
     } @catch (NSException *exception) {
         return NO;
     }
+}
+
+- (Train*) getTrainAtIndex:(NSUInteger) index{
+    return [tableData objectAtIndex: index];
 }
 
 @end

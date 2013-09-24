@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "Train.h"
 
 @interface DataHandling : NSObject {
     NSMutableArray *tableData;
@@ -20,7 +21,8 @@
 
 + (DataHandling*) sharedInstance;
 - (void) loadTextFile;
-- (BOOL) addTrain:(NSMutableArray*) train;
+- (BOOL) addTrain:(Train*) train;
 - (BOOL) removeTrainAtIndex:(NSUInteger) index;
+- (Train*) getTrainAtIndex:(NSUInteger) index;
 
 @end

@@ -8,7 +8,10 @@
 
 #import <UIKit/UIKit.h>
 #import "DataHandling.h"
+#import "DetailViewController.h"
+#import "TrainCell.h"
 
 @interface DashboardViewController : UITableViewController <UIAlertViewDelegate>
+
 
 @end

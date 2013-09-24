@@ -3,6 +3,14 @@
    version = "1.0">
    <ContextStates>
       <ContextState
+         contextName = "-[DashboardViewController tableView:cellForRowAtIndexPath:]:DashboardViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "((BOOL)[train objectAtIndex:6])">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "-[DashboardViewController viewDidLoad]:DashboardViewController.m">
       </ContextState>
    </ContextStates>
