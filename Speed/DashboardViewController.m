@@ -30,6 +30,11 @@
     
     self.title = @"Train List";
     
+    [[TimerUI sharedInstance] timer];
+    
+    // Notification
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(refreshList:) name:refreshNotification object:nil];
+    
     // Navigation
     self.navigationItem.leftBarButtonItem = self.editButtonItem;
     
@@ -56,6 +61,10 @@
     [[self tableView] setEditing:editing animated:animated];
 }
 
+- (void)refreshList:(NSNotification *) notif
+{
+    [[self tableView] reloadData];
+}
 
 - (void)insertNewTrain
 {
@@ -99,7 +108,6 @@
     //If there are no cells to be reused, create a new cell
     if (cell == nil) {
         cell = [[TrainCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
-
     }
     // Train: name, style, speed, max speed, switch, mac address, low battery
     if ([[DataHandling sharedInstance] tableData] > 0){
@@ -107,6 +115,7 @@
         Train *train = [[DataHandling sharedInstance] getTrainAtIndex:indexPath.row];
         cell.TrainNameLabel.text = train.name;
         cell.SpeedLabel.text = [NSString stringWithFormat:@"%d", train.speed];
+        cell.index = indexPath.row;
         if ( train.speed > train.maxSpeed) {
             cell.SpeedLabel.textColor = [UIColor redColor];
         }
@@ -134,51 +143,6 @@
         [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
     }
 }
-
-/* UNUSED METHODS
-
-- (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    
-    //DetailViewController * DVC = [segue destinationViewController]; OR
-    
-    //Create a DetailViewController Object
-    DetailViewController *detail = [[DetailViewController alloc] init];
-    
-    //Set DVC to the destinationViewController property of the segue
-    detail = [segue destinationViewController];
-    
-    
-    //Get the indexpath
-    NSIndexPath *path = [self.tableView indexPathForSelectedRow];
-    Train *train = [[DataHandling sharedInstance] getTrainAtIndex:path.row];
-    
-    detail.trainNumber = path.row;
-    detail.trainName = train.name;
-    
-    
-}
- 
-
-
-# pragma mark UIAlertViewDelegateMethods
-
-- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
-{
-    // Only do if the user clicks 'OK'
-    if (buttonIndex == 1){
-        NSString *tmpText = [alertView textFieldAtIndex:0].text;
-     
-        // Train: name, style, speed, max speed, switch, mac address, low battery
-        Train *train = [[Train alloc] initWithName:tmpText style:@"Classic" speed:110 maxSpeed:20 onOff:NO lowBattery:NO macAddress:@"MAC"];
-        [[DataHandling sharedInstance] addTrain:train];
-        
-        NSIndexPath *indexPath = [NSIndexPath indexPathForRow:[[[DataHandling sharedInstance] tableData] count]-1 inSection:0];
-        [[self tableView] insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
-    }
-}
-
- */
 
 @end
 

@@ -7,12 +7,15 @@
 //
 
 #import "AppDelegate.h"
+#import "DashboardViewController.h"
 
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(timerTimeout:) name:timerNotification object:nil];
+
     return YES;
 }
 							
@@ -42,5 +45,20 @@
 {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
+
+-(void)timerTimeout:(NSNotification *) notif
+{
+    NSMutableArray *data = [[DataHandling sharedInstance] tableData];
+    for (int index = 0; index < data.count; index++) {
+        Train *train = [[DataHandling sharedInstance] getTrainAtIndex:index];
+        if (train.onOff){
+            //TODO: GET PARSED SPEED
+            [train setSpeed:train.speed+1];
+            [[DataHandling sharedInstance] replaceTrainAtIndex:index withObject:train];
+        }
+    }
+    [[NSNotificationCenter defaultCenter] postNotificationName:refreshNotification object:nil];
+}
+
 
 @end

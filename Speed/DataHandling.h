@@ -23,6 +23,7 @@
 - (void) loadTextFile;
 - (BOOL) addTrain:(Train*) train;
 - (BOOL) removeTrainAtIndex:(NSUInteger) index;
+- (BOOL) replaceTrainAtIndex:(NSUInteger) index withObject:(Train*) train;
 - (Train*) getTrainAtIndex:(NSUInteger) index;
 
 @end

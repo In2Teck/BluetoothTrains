@@ -13,6 +13,9 @@
 @property (weak, nonatomic) IBOutlet UIImageView *LowBatteryImage;
 @property (weak, nonatomic) IBOutlet UILabel *SpeedLabel;
 @property (weak, nonatomic) IBOutlet UILabel *TrainNameLabel;
-@property (weak, nonatomic) IBOutlet UISwitch *OnOffSwitch;
+@property (strong, nonatomic) IBOutlet UISwitch *OnOffSwitch;
+@property int index;
+
+- (IBAction)flipSwitchValue:(id)sender;
 
 @end

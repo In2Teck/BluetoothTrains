@@ -13,5 +13,13 @@
       <ContextState
          contextName = "-[DashboardViewController viewDidLoad]:DashboardViewController.m">
       </ContextState>
+      <ContextState
+         contextName = "-[TrainCell flipSwitchValue:]:TrainCell.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "sender">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
    </ContextStates>
 </VariablesViewState>

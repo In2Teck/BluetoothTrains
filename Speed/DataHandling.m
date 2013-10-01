@@ -32,7 +32,8 @@ static DataHandling *sharedDataInstance = nil;
     return self;
 }
 
--(void) dealloc{
+-(void) dealloc
+{
     paths = nil;
     stringsPlistPath = nil;
     tableData = nil;
@@ -57,6 +58,17 @@ static DataHandling *sharedDataInstance = nil;
     return YES;
 }
 
+- (BOOL) replaceTrainAtIndex:(NSUInteger) index withObject:(Train*) train{
+    NSData *objData = [NSKeyedArchiver archivedDataWithRootObject:train];
+    @try{
+        [tableData replaceObjectAtIndex:index withObject:objData];
+        [tableData writeToFile:stringsPlistPath atomically: YES];
+        return YES;
+    } @catch (NSException *exception){
+        return NO;
+    }
+}
+
 - (BOOL) removeTrainAtIndex:(NSUInteger) index{
     @try{
         [tableData removeObjectAtIndex: index];
@@ -71,8 +83,7 @@ static DataHandling *sharedDataInstance = nil;
     
     NSData *objData = [tableData objectAtIndex:index];
     Train *train = [NSKeyedUnarchiver unarchiveObjectWithData:objData];
-    return train;
-    
+    return train;    
 }
 
 @end

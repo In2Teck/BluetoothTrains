@@ -26,6 +26,7 @@
 		C7CCCA2717F0EC2C00A6E0A1 /* TrainCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C7CCCA2617F0EC2C00A6E0A1 /* TrainCell.m */; };
 		C7CCCA2A17F10C3600A6E0A1 /* Train.m in Sources */ = {isa = PBXBuildFile; fileRef = C7CCCA2917F10C3600A6E0A1 /* Train.m */; };
 		C7CCCA2D17F1DFA800A6E0A1 /* NewItemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C7CCCA2C17F1DFA800A6E0A1 /* NewItemViewController.m */; };
+		C7CCCA3017F3C21D00A6E0A1 /* TimerUI.m in Sources */ = {isa = PBXBuildFile; fileRef = C7CCCA2F17F3C21D00A6E0A1 /* TimerUI.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -58,6 +59,8 @@
 		C7CCCA2917F10C3600A6E0A1 /* Train.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Train.m; sourceTree = "<group>"; };
 		C7CCCA2B17F1DFA800A6E0A1 /* NewItemViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewItemViewController.h; sourceTree = "<group>"; };
 		C7CCCA2C17F1DFA800A6E0A1 /* NewItemViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewItemViewController.m; sourceTree = "<group>"; };
+		C7CCCA2E17F3C21D00A6E0A1 /* TimerUI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimerUI.h; sourceTree = "<group>"; };
+		C7CCCA2F17F3C21D00A6E0A1 /* TimerUI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimerUI.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +120,8 @@
 				C7445E2E17E934D0009E9E96 /* SettingsViewController.m */,
 				C7CCCA2B17F1DFA800A6E0A1 /* NewItemViewController.h */,
 				C7CCCA2C17F1DFA800A6E0A1 /* NewItemViewController.m */,
+				C7CCCA2E17F3C21D00A6E0A1 /* TimerUI.h */,
+				C7CCCA2F17F3C21D00A6E0A1 /* TimerUI.m */,
 			);
 			path = Speed;
 			sourceTree = "<group>";
@@ -234,6 +239,7 @@
 				C7CCCA2717F0EC2C00A6E0A1 /* TrainCell.m in Sources */,
 				C7CCCA2A17F10C3600A6E0A1 /* Train.m in Sources */,
 				C7CCCA2D17F1DFA800A6E0A1 /* NewItemViewController.m in Sources */,
+				C7CCCA3017F3C21D00A6E0A1 /* TimerUI.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -273,7 +279,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Pat Weston (KZ47W57K3V)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Pat Weston (KZ47W57K3V)";
-				COPY_PHASE_STRIP = NO;
+				COPY_PHASE_STRIP = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -291,6 +297,7 @@
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "B03C86A7-5649-41B1-91F3-E6660B76D132";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = 2;
+				VALIDATE_PRODUCT = YES;
 			};
 			name = Debug;
 		};

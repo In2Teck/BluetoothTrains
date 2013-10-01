@@ -7,6 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "TimerUI.h"
+#import "DataHandling.h"
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
