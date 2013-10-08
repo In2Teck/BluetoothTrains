@@ -14,7 +14,6 @@
 
 @implementation DashboardViewController
 
-
 -(id)initWithStyle:(UITableViewStyle)style
 {
     self = [super initWithStyle:style];
@@ -68,13 +67,7 @@
 
 - (void)insertNewTrain
 {
-    
     [self performSegueWithIdentifier: @"NewItemSegue" sender: self];
-    // Display UIAlertView
-    /*UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Enter name" message:@"" delegate:self cancelButtonTitle:@"cancel" otherButtonTitles:@"Ok", nil];
-    
-    alert.alertViewStyle = UIAlertViewStylePlainTextInput;
-    [alert show];*/
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
@@ -114,7 +107,7 @@
         //Set the text attribute to whatever we are currently looking at in our array
         Train *train = [[DataHandling sharedInstance] getTrainAtIndex:indexPath.row];
         cell.TrainNameLabel.text = train.name;
-        cell.SpeedLabel.text = [NSString stringWithFormat:@"%d", train.speed];
+        cell.SpeedLabel.text = [NSString stringWithFormat:@"%f", train.speed];
         cell.index = indexPath.row;
         if ( train.speed > train.maxSpeed) {
             cell.SpeedLabel.textColor = [UIColor redColor];

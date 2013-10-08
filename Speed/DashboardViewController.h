@@ -15,6 +15,6 @@
 
 @interface DashboardViewController : UITableViewController
 
-- (void)refreshList;
+- (void)refreshList:(NSNotification *) notif;
 
 @end

@@ -13,12 +13,13 @@
 
 @property (strong, nonatomic) NSString *name;
 @property (strong, nonatomic) NSString *style;
-@property int speed;
-@property int maxSpeed;
+@property float speed;
+@property float maxSpeed;
+@property int wheelDiameter;
 @property BOOL onOff;
 @property BOOL lowBattery;
-@property (strong, nonatomic) NSString *macAddress;
+@property (strong, nonatomic) NSString *uId;
 
-- (id) initWithName:(NSString*)initName style:(NSString*)initStyle speed:(int)initSpeed maxSpeed:(int)initMaxSpeed onOff:(BOOL)initOnOff lowBattery:(BOOL)initLowBattery macAddress:(NSString*) initMacAddress;
+- (id) initWithName:(NSString*)initName style:(NSString*)initStyle speed:(float)initSpeed maxSpeed:(float)initMaxSpeed wheelDiameter:(int)initWheelDiameter onOff:(BOOL)initOnOff lowBattery:(BOOL)initLowBattery uId:(NSString*) initUId;
 
 @end

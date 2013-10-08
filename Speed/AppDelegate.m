@@ -14,7 +14,8 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(timerTimeout:) name:timerNotification object:nil];
+    // Timed notification
+    //[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(timerTimeout:) name:timerNotification object:nil];
 
     return YES;
 }
@@ -49,15 +50,19 @@
 -(void)timerTimeout:(NSNotification *) notif
 {
     NSMutableArray *data = [[DataHandling sharedInstance] tableData];
+    BOOL refresh = NO;
     for (int index = 0; index < data.count; index++) {
         Train *train = [[DataHandling sharedInstance] getTrainAtIndex:index];
         if (train.onOff){
             //TODO: GET PARSED SPEED
             [train setSpeed:train.speed+1];
             [[DataHandling sharedInstance] replaceTrainAtIndex:index withObject:train];
+            refresh = YES;
         }
     }
-    [[NSNotificationCenter defaultCenter] postNotificationName:refreshNotification object:nil];
+    if (refresh){
+        [[NSNotificationCenter defaultCenter] postNotificationName:refreshNotification object:nil];
+    }
 }
 
 

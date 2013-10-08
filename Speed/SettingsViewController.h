@@ -8,7 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import "DataHandling.h"
+//#import <ExternalAccessory/ExternalAccessory.h>
 
 @interface SettingsViewController : UIViewController
+@property (weak, nonatomic) IBOutlet UILabel *DisplayLabel;
 
 @end

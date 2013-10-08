@@ -10,6 +10,8 @@
 
 @implementation SettingsViewController
 
+@synthesize DisplayLabel;
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -24,9 +26,8 @@
 -(void)viewWillAppear:(BOOL)animated{
 
     [super viewWillAppear:animated];
+    DisplayLabel.text = @"TEST";
     
-    //[[DataHandling sharedInstance] addTrain:[[NSMutableArray alloc] initWithObjects:@"Settings New Train", @"Classic", @"40", @"ON", @"MAC", nil] ];
-    //[[DataHandling sharedInstance] removeTrainAtIndex: 1];
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation

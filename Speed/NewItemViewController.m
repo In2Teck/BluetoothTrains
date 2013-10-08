@@ -14,7 +14,7 @@
 
 @implementation NewItemViewController
 
-@synthesize TrainName, MaxSpeed, Style, AddTrainButton;
+@synthesize TrainName, MaxSpeed, WheelDiameter, AddTrainButton, UId;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -34,7 +34,7 @@
 
 - (void) addTrain
 {
-    Train *train = [[Train alloc] initWithName:self.TrainName.text style:self.Style.text speed:0 maxSpeed:[self.MaxSpeed.text intValue] onOff:NO lowBattery:NO macAddress:@"MAC"];
+    Train *train = [[Train alloc] initWithName:self.TrainName.text style:@"Classic" speed:0.0 maxSpeed:[self.MaxSpeed.text floatValue] wheelDiameter:[self.WheelDiameter.text intValue] onOff:NO lowBattery:NO uId:self.UId.text];
     [[DataHandling sharedInstance] addTrain:train];
 }
 
