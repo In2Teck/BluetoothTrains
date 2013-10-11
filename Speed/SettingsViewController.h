@@ -11,6 +11,8 @@
 //#import <ExternalAccessory/ExternalAccessory.h>
 
 @interface SettingsViewController : UIViewController
-@property (weak, nonatomic) IBOutlet UILabel *DisplayLabel;
+
+@property (strong, nonatomic) IBOutlet UISwitch *USMetricSystem;
+@property (strong, nonatomic) IBOutlet UISwitch *ISOMetricSystem;
 
 @end

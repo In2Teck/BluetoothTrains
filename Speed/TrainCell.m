@@ -44,6 +44,6 @@
         self.SpeedLabel.text = @"0.00";
         self.SpeedLabel.textColor = [UIColor blackColor];
     }
-    
 }
+
 @end

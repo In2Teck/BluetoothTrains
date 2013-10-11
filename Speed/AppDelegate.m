@@ -16,6 +16,9 @@
     // Override point for customization after application launch.
     // Timed notification
     //[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(timerTimeout:) name:timerNotification object:nil];
+    
+    NSDictionary *appDefaults = [NSDictionary dictionaryWithObject:[NSNumber numberWithBool:YES] forKey:@"CacheDataAgressively"];
+    [[NSUserDefaults standardUserDefaults] registerDefaults:appDefaults];
 
     return YES;
 }

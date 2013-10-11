@@ -10,11 +10,29 @@
 
 @implementation SettingsViewController
 
-@synthesize DisplayLabel;
+@synthesize USMetricSystem, ISOMetricSystem;
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    if([defaults objectForKey:@"IsMetricSystem"] != nil) {
+        BOOL IsMetricSystem = [defaults boolForKey:@"IsMetricSystem"];
+        if (IsMetricSystem) {
+            self.ISOMetricSystem.on = YES;
+            self.USMetricSystem.on = NO;
+        } else {
+            self.ISOMetricSystem.on = NO;
+            self.USMetricSystem.on = YES;
+        }
+    } else {
+        [defaults setBool:NO forKey:@"IsMetricSystem"];
+        [defaults synchronize];
+        self.ISOMetricSystem.on = NO;
+        self.USMetricSystem.on = YES;
+    }
+    
 }
 
 - (void)viewDidUnload
@@ -26,13 +44,26 @@
 -(void)viewWillAppear:(BOOL)animated{
 
     [super viewWillAppear:animated];
-    DisplayLabel.text = @"TEST";
     
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
-    return (interfaceOrientation == UIInterfaceOrientationPortrait);
+    return YES;
+}
+
+- (IBAction)flipUSMetricSystem:(id)sender {
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    [defaults setBool:![defaults boolForKey:@"IsMetricSystem"] forKey:@"IsMetricSystem"];
+    [defaults synchronize];
+    [self.ISOMetricSystem setOn:!self.ISOMetricSystem.on animated:YES];
+}
+
+- (IBAction)flipISOMetricSystem:(id)sender {
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    [defaults setBool:![defaults boolForKey:@"IsMetricSystem"] forKey:@"IsMetricSystem"];
+    [defaults synchronize];
+    [self.USMetricSystem setOn:!self.USMetricSystem.on animated:YES];
 }
 
 @end

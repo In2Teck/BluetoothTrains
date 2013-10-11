@@ -25,6 +25,10 @@
 		C753AEB21804B2F400AEA0AC /* Hex.m in Sources */ = {isa = PBXBuildFile; fileRef = C753AEB11804B2F400AEA0AC /* Hex.m */; };
 		C753AEB51807A8C100AEA0AC /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = C753AEB41807A8C100AEA0AC /* Constants.m */; };
 		C753AEB81807BE1400AEA0AC /* EditItemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C753AEB71807BE1400AEA0AC /* EditItemViewController.m */; };
+		C753AEBB1807E58000AEA0AC /* settings.png in Resources */ = {isa = PBXBuildFile; fileRef = C753AEB91807E4B500AEA0AC /* settings.png */; };
+		C753AEBC1807E58400AEA0AC /* home.png in Resources */ = {isa = PBXBuildFile; fileRef = C753AEBA1807E4B500AEA0AC /* home.png */; };
+		C753AEBF1807E6D000AEA0AC /* settings@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C753AEBD1807E6D000AEA0AC /* settings@2x.png */; };
+		C753AEC01807E6D000AEA0AC /* home@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C753AEBE1807E6D000AEA0AC /* home@2x.png */; };
 		C7CCCA2417F0E9AA00A6E0A1 /* low_battery.png in Resources */ = {isa = PBXBuildFile; fileRef = C7CCCA2317F0E9AA00A6E0A1 /* low_battery.png */; };
 		C7CCCA2717F0EC2C00A6E0A1 /* TrainCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C7CCCA2617F0EC2C00A6E0A1 /* TrainCell.m */; };
 		C7CCCA2A17F10C3600A6E0A1 /* Train.m in Sources */ = {isa = PBXBuildFile; fileRef = C7CCCA2917F10C3600A6E0A1 /* Train.m */; };
@@ -60,6 +64,10 @@
 		C753AEB41807A8C100AEA0AC /* Constants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Constants.m; sourceTree = "<group>"; };
 		C753AEB61807BE1400AEA0AC /* EditItemViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditItemViewController.h; sourceTree = "<group>"; };
 		C753AEB71807BE1400AEA0AC /* EditItemViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditItemViewController.m; sourceTree = "<group>"; };
+		C753AEB91807E4B500AEA0AC /* settings.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = settings.png; sourceTree = "<group>"; };
+		C753AEBA1807E4B500AEA0AC /* home.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = home.png; sourceTree = "<group>"; };
+		C753AEBD1807E6D000AEA0AC /* settings@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "settings@2x.png"; sourceTree = "<group>"; };
+		C753AEBE1807E6D000AEA0AC /* home@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "home@2x.png"; sourceTree = "<group>"; };
 		C7796FED17FCA2EB00CB6A88 /* ExternalAccessory.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ExternalAccessory.framework; path = System/Library/Frameworks/ExternalAccessory.framework; sourceTree = SDKROOT; };
 		C7796FEF17FCA72C00CB6A88 /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = System/Library/Frameworks/GameKit.framework; sourceTree = SDKROOT; };
 		C7CCCA2317F0E9AA00A6E0A1 /* low_battery.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = low_battery.png; sourceTree = "<group>"; };
@@ -154,6 +162,10 @@
 		C7445E2817E815A7009E9E96 /* img */ = {
 			isa = PBXGroup;
 			children = (
+				C753AEBD1807E6D000AEA0AC /* settings@2x.png */,
+				C753AEBE1807E6D000AEA0AC /* home@2x.png */,
+				C753AEB91807E4B500AEA0AC /* settings.png */,
+				C753AEBA1807E4B500AEA0AC /* home.png */,
 				C7CCCA2317F0E9AA00A6E0A1 /* low_battery.png */,
 				C7445E2917E815A7009E9E96 /* BEELogo-Landscape.png */,
 				C7445E2A17E815A7009E9E96 /* BEELogo-Landscape@2x.png */,
@@ -232,12 +244,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C753AEBF1807E6D000AEA0AC /* settings@2x.png in Resources */,
 				C7445E0717E3BC57009E9E96 /* InfoPlist.strings in Resources */,
 				C7445E0F17E3BC57009E9E96 /* Default.png in Resources */,
 				C7445E1117E3BC57009E9E96 /* Default@2x.png in Resources */,
 				C7445E1317E3BC57009E9E96 /* Default-568h@2x.png in Resources */,
+				C753AEC01807E6D000AEA0AC /* home@2x.png in Resources */,
 				C7445E1617E3BC57009E9E96 /* MainStoryboard.storyboard in Resources */,
 				C7445E2B17E815A7009E9E96 /* BEELogo-Landscape.png in Resources */,
+				C753AEBC1807E58400AEA0AC /* home.png in Resources */,
+				C753AEBB1807E58000AEA0AC /* settings.png in Resources */,
 				C7445E2C17E815A7009E9E96 /* BEELogo-Landscape@2x.png in Resources */,
 				C7CCCA2417F0E9AA00A6E0A1 /* low_battery.png in Resources */,
 			);
