@@ -14,6 +14,9 @@
 @property (weak, nonatomic) IBOutlet UILabel *SpeedLabel;
 @property (weak, nonatomic) IBOutlet UILabel *TrainNameLabel;
 @property (strong, nonatomic) IBOutlet UISwitch *OnOffSwitch;
+@property (weak, nonatomic) IBOutlet UILabel *DistanceLabel;
+@property (weak, nonatomic) IBOutlet UILabel *SpeedMetricLabel;
+@property (weak, nonatomic) IBOutlet UILabel *DistanceMetricLabel;
 @property int index;
 
 - (IBAction)flipSwitchValue:(id)sender;

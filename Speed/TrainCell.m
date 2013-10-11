@@ -11,11 +11,7 @@
 
 @implementation TrainCell
 
-@synthesize SpeedLabel;
-@synthesize TrainNameLabel;
-@synthesize OnOffSwitch;
-@synthesize LowBatteryImage;
-@synthesize index;
+@synthesize SpeedLabel, TrainNameLabel, OnOffSwitch, LowBatteryImage, DistanceLabel, index;
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {
@@ -35,6 +31,19 @@
 - (IBAction)flipSwitchValue:(id)sender {
     Train *train = [[DataHandling sharedInstance] getTrainAtIndex:index];
     [train setOnOff:!train.onOff];
-    [[DataHandling sharedInstance] replaceTrainAtIndex:index withObject:train];    
+    [[DataHandling sharedInstance] replaceTrainAtIndex:index withObject:train];
+    
+    if (train.onOff){
+        self.SpeedLabel.text = [NSString stringWithFormat:@"%.2f", train.speed];
+        if ( train.speed > train.maxSpeed) {
+            self.SpeedLabel.textColor = [UIColor redColor];
+        } else {
+            self.SpeedLabel.textColor = [UIColor blackColor];
+        }
+    } else {
+        self.SpeedLabel.text = @"0.00";
+        self.SpeedLabel.textColor = [UIColor blackColor];
+    }
+    
 }
 @end

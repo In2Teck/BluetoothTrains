@@ -11,10 +11,15 @@
 #import <UIKit/UIKit.h>
 #import "DataHandling.h"
 #import "TrainCell.h"
-#import "TimerUI.h"
+#import "Hex.h"
+#import "EditItemViewController.h"
 
-@interface DashboardViewController : UITableViewController
+@interface DashboardViewController : UITableViewController <UIKeyInput> {
+    NSMutableString *frame;
+}
 
-- (void)refreshList:(NSNotification *) notif;
+@property (strong, nonatomic) NSMutableString *frame;
+
+- (void)refreshList;
 
 @end

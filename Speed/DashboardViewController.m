@@ -8,11 +8,13 @@
 
 #import "DashboardViewController.h"
 
-@interface DashboardViewController ()
+@interface DashboardViewController () 
 
 @end
 
 @implementation DashboardViewController
+
+@synthesize frame;
 
 -(id)initWithStyle:(UITableViewStyle)style
 {
@@ -28,11 +30,6 @@
     [super viewDidLoad];
     
     self.title = @"Train List";
-    
-    [[TimerUI sharedInstance] timer];
-    
-    // Notification
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(refreshList:) name:refreshNotification object:nil];
     
     // Navigation
     self.navigationItem.leftBarButtonItem = self.editButtonItem;
@@ -60,7 +57,7 @@
     [[self tableView] setEditing:editing animated:animated];
 }
 
-- (void)refreshList:(NSNotification *) notif
+- (void)refreshList
 {
     [[self tableView] reloadData];
 }
@@ -107,13 +104,23 @@
         //Set the text attribute to whatever we are currently looking at in our array
         Train *train = [[DataHandling sharedInstance] getTrainAtIndex:indexPath.row];
         cell.TrainNameLabel.text = train.name;
-        cell.SpeedLabel.text = [NSString stringWithFormat:@"%f", train.speed];
         cell.index = indexPath.row;
-        if ( train.speed > train.maxSpeed) {
-            cell.SpeedLabel.textColor = [UIColor redColor];
-        }
-        cell.LowBatteryImage.alpha = train.lowBattery ? 1 : 0;
         cell.OnOffSwitch.on = train.onOff;
+        
+        if (train.onOff) {
+            cell.SpeedLabel.text = [NSString stringWithFormat:@"%.2f", train.speed];
+            if ( train.speed > train.maxSpeed) {
+                cell.SpeedLabel.textColor = [UIColor redColor];
+            } else {
+                cell.SpeedLabel.textColor = [UIColor blackColor];
+            }
+        } else {
+            cell.SpeedLabel.text = @"0.00";
+            cell.SpeedLabel.textColor = [UIColor blackColor];
+        }
+        
+        cell.DistanceLabel.text = [NSString stringWithFormat:@"%.2f", train.distance];
+        cell.LowBatteryImage.alpha = train.lowBattery ? 1 : 0;
         
         //Set the detail disclosure indicator
         //cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
@@ -135,6 +142,41 @@
         [[DataHandling sharedInstance] removeTrainAtIndex:indexPath.row];
         [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
     }
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if([[segue identifier] isEqualToString:@"EditItemSegue"]) {
+        NSIndexPath *indexPath = [self.tableView indexPathForCell:sender];
+        EditItemViewController *editItemViewController = segue.destinationViewController;
+        editItemViewController.TrainIndex = indexPath.row;
+    }
+}
+
+-(BOOL)canBecomeFirstResponder{
+    return YES;
+}
+
+-(BOOL)hasText{
+    return YES;
+}
+
+-(void)insertText:(NSString *)text {
+    NSString *input = [NSString stringToHex:text];
+    if ([input isEqualToString:@"24"]){
+        self.frame = [NSMutableString stringWithString:@""];
+    } else if([input isEqualToString:@"a"]){
+        // PARSE FRAME
+        BOOL update = [[DataHandling sharedInstance] updateTrainValues:self.frame];
+        if (update) {
+            [self refreshList];
+        }
+    }else {
+        [self.frame appendString:text];
+    }
+}
+
+- (void)deleteBackward
+{
 }
 
 @end

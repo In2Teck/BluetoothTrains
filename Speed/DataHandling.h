@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "Train.h"
+#import "Constants.h"
 
 @interface DataHandling : NSObject {
     NSMutableArray *tableData;
@@ -25,5 +26,8 @@
 - (BOOL) removeTrainAtIndex:(NSUInteger) index;
 - (BOOL) replaceTrainAtIndex:(NSUInteger) index withObject:(Train*) train;
 - (Train*) getTrainAtIndex:(NSUInteger) index;
+- (BOOL) updateTrainValues:(NSString*)frame;
+- (BOOL) validateValues:(NSArray*)array;
+- (float) calculateSpeed:(float)data wheelDiameter:(float)diameter metricSystem:(BOOL)isMetricSystem;
 
 @end

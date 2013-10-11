@@ -22,11 +22,13 @@
 		C7445E2C17E815A7009E9E96 /* BEELogo-Landscape@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C7445E2A17E815A7009E9E96 /* BEELogo-Landscape@2x.png */; };
 		C7445E2F17E934D0009E9E96 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C7445E2E17E934D0009E9E96 /* SettingsViewController.m */; };
 		C7445E3317EA633F009E9E96 /* DataHandling.m in Sources */ = {isa = PBXBuildFile; fileRef = C7445E3217EA633F009E9E96 /* DataHandling.m */; };
+		C753AEB21804B2F400AEA0AC /* Hex.m in Sources */ = {isa = PBXBuildFile; fileRef = C753AEB11804B2F400AEA0AC /* Hex.m */; };
+		C753AEB51807A8C100AEA0AC /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = C753AEB41807A8C100AEA0AC /* Constants.m */; };
+		C753AEB81807BE1400AEA0AC /* EditItemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C753AEB71807BE1400AEA0AC /* EditItemViewController.m */; };
 		C7CCCA2417F0E9AA00A6E0A1 /* low_battery.png in Resources */ = {isa = PBXBuildFile; fileRef = C7CCCA2317F0E9AA00A6E0A1 /* low_battery.png */; };
 		C7CCCA2717F0EC2C00A6E0A1 /* TrainCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C7CCCA2617F0EC2C00A6E0A1 /* TrainCell.m */; };
 		C7CCCA2A17F10C3600A6E0A1 /* Train.m in Sources */ = {isa = PBXBuildFile; fileRef = C7CCCA2917F10C3600A6E0A1 /* Train.m */; };
 		C7CCCA2D17F1DFA800A6E0A1 /* NewItemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C7CCCA2C17F1DFA800A6E0A1 /* NewItemViewController.m */; };
-		C7CCCA3017F3C21D00A6E0A1 /* TimerUI.m in Sources */ = {isa = PBXBuildFile; fileRef = C7CCCA2F17F3C21D00A6E0A1 /* TimerUI.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +54,12 @@
 		C7445E2E17E934D0009E9E96 /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
 		C7445E3117EA633F009E9E96 /* DataHandling.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataHandling.h; sourceTree = "<group>"; };
 		C7445E3217EA633F009E9E96 /* DataHandling.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataHandling.m; sourceTree = "<group>"; };
+		C753AEB01804B2F400AEA0AC /* Hex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Hex.h; sourceTree = "<group>"; };
+		C753AEB11804B2F400AEA0AC /* Hex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Hex.m; sourceTree = "<group>"; };
+		C753AEB31807A8C100AEA0AC /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
+		C753AEB41807A8C100AEA0AC /* Constants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Constants.m; sourceTree = "<group>"; };
+		C753AEB61807BE1400AEA0AC /* EditItemViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditItemViewController.h; sourceTree = "<group>"; };
+		C753AEB71807BE1400AEA0AC /* EditItemViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditItemViewController.m; sourceTree = "<group>"; };
 		C7796FED17FCA2EB00CB6A88 /* ExternalAccessory.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ExternalAccessory.framework; path = System/Library/Frameworks/ExternalAccessory.framework; sourceTree = SDKROOT; };
 		C7796FEF17FCA72C00CB6A88 /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = System/Library/Frameworks/GameKit.framework; sourceTree = SDKROOT; };
 		C7CCCA2317F0E9AA00A6E0A1 /* low_battery.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = low_battery.png; sourceTree = "<group>"; };
@@ -61,8 +69,6 @@
 		C7CCCA2917F10C3600A6E0A1 /* Train.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Train.m; sourceTree = "<group>"; };
 		C7CCCA2B17F1DFA800A6E0A1 /* NewItemViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewItemViewController.h; sourceTree = "<group>"; };
 		C7CCCA2C17F1DFA800A6E0A1 /* NewItemViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewItemViewController.m; sourceTree = "<group>"; };
-		C7CCCA2E17F3C21D00A6E0A1 /* TimerUI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimerUI.h; sourceTree = "<group>"; };
-		C7CCCA2F17F3C21D00A6E0A1 /* TimerUI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimerUI.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,8 +130,8 @@
 				C7445E2E17E934D0009E9E96 /* SettingsViewController.m */,
 				C7CCCA2B17F1DFA800A6E0A1 /* NewItemViewController.h */,
 				C7CCCA2C17F1DFA800A6E0A1 /* NewItemViewController.m */,
-				C7CCCA2E17F3C21D00A6E0A1 /* TimerUI.h */,
-				C7CCCA2F17F3C21D00A6E0A1 /* TimerUI.m */,
+				C753AEB61807BE1400AEA0AC /* EditItemViewController.h */,
+				C753AEB71807BE1400AEA0AC /* EditItemViewController.m */,
 			);
 			path = Speed;
 			sourceTree = "<group>";
@@ -162,6 +168,10 @@
 				C7CCCA2917F10C3600A6E0A1 /* Train.m */,
 				C7445E3117EA633F009E9E96 /* DataHandling.h */,
 				C7445E3217EA633F009E9E96 /* DataHandling.m */,
+				C753AEB01804B2F400AEA0AC /* Hex.h */,
+				C753AEB11804B2F400AEA0AC /* Hex.m */,
+				C753AEB31807A8C100AEA0AC /* Constants.h */,
+				C753AEB41807A8C100AEA0AC /* Constants.m */,
 			);
 			name = data;
 			sourceTree = "<group>";
@@ -240,15 +250,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C753AEB51807A8C100AEA0AC /* Constants.m in Sources */,
 				C7445E0917E3BC57009E9E96 /* main.m in Sources */,
 				C7445E0D17E3BC57009E9E96 /* AppDelegate.m in Sources */,
 				C7445E2417E3C2D2009E9E96 /* DashboardViewController.m in Sources */,
+				C753AEB21804B2F400AEA0AC /* Hex.m in Sources */,
 				C7445E2F17E934D0009E9E96 /* SettingsViewController.m in Sources */,
 				C7445E3317EA633F009E9E96 /* DataHandling.m in Sources */,
+				C753AEB81807BE1400AEA0AC /* EditItemViewController.m in Sources */,
 				C7CCCA2717F0EC2C00A6E0A1 /* TrainCell.m in Sources */,
 				C7CCCA2A17F10C3600A6E0A1 /* Train.m in Sources */,
 				C7CCCA2D17F1DFA800A6E0A1 /* NewItemViewController.m in Sources */,
-				C7CCCA3017F3C21D00A6E0A1 /* TimerUI.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

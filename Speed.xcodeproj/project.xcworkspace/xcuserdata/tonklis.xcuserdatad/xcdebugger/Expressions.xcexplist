@@ -3,15 +3,21 @@
    version = "1.0">
    <ContextStates>
       <ContextState
+         contextName = "-[DashboardViewController viewDidLoad]:DashboardViewController.m">
+      </ContextState>
+      <ContextState
          contextName = "-[DashboardViewController tableView:cellForRowAtIndexPath:]:DashboardViewController.m">
          <PersistentStrings>
+            <PersistentString
+               value = "train.lowBattery ==NO">
+            </PersistentString>
             <PersistentString
                value = "((BOOL)[train objectAtIndex:6])">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "-[DashboardViewController viewDidLoad]:DashboardViewController.m">
+         contextName = "-[DataHandling updateTrainValues:]:DataHandling.m">
       </ContextState>
       <ContextState
          contextName = "-[TrainCell flipSwitchValue:]:TrainCell.m">
