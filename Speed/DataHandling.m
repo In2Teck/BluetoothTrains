@@ -10,7 +10,7 @@
 
 @implementation DataHandling
 
-@synthesize tableData, paths, stringsPlistPath;
+@synthesize tableData, paths, stringsPlistPath, frame;
 
 static DataHandling *sharedDataInstance = nil;
 
@@ -118,14 +118,12 @@ static DataHandling *sharedDataInstance = nil;
     NSString *dataField = [array objectAtIndex:3];
     NSString *checksum = [array objectAtIndex:4];
     
-    NSArray *values = [[NSArray alloc] initWithObjects: trainId, sensorId, dataFieldLength, dataField, checksum, nil];
-    
-    if ([self validateValues:values]) {
+    if ([self validateValues:trainId sensor:sensorId dataLength:dataFieldLength data:dataField check:checksum]) {
         Train *train = [self getTrainByUId:trainId];
         if (train != NULL && train.onOff) {
             if ([sensorId isEqualToString:@"1"]) {
-                [train setSpeed: [self calculateSpeed: [dataField floatValue] wheelDiameter:train.wheelDiameter metricSystem:NO]];
-                [train updateDistance:[dataField floatValue] metricSystem:NO];
+                [train setSpeed: [self calculateSpeed:[dataField floatValue] sourceTrain:train]];
+                [train updateDistance:[dataField floatValue]];
             } else if ([sensorId isEqualToString:@"2"]) {
                 if ([dataField isEqualToString:@"149"]) {
                     [train setLowBattery:YES];
@@ -140,19 +138,40 @@ static DataHandling *sharedDataInstance = nil;
     return NO;
 }
 
-- (BOOL) validateValues:(NSArray*) array
+- (BOOL) validateValues:(NSString*)trainId sensor:(NSString*)sensorId dataLength:(NSString*)dataFieldLength data:(NSString*)dataField check:(NSString*)checksum
 {
+    int accumulator = 0;
+    int startOfString = 2;
+    int space = 32;
+    accumulator += startOfString;
+    accumulator += [sensorId intValue] + space;
+    
     return YES;
 }
 
-- (float) calculateSpeed:(float)data wheelDiameter:(float)diameter metricSystem:(BOOL)isMetricSystem
+- (float) calculateSpeed:(float)data sourceTrain:(Train*)train
 {
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     float speed = 0;
-    if (isMetricSystem) {
-        speed = (diameter * KPH_CONSTANT) / data;
+    //speed = (train.wheelDiameter * MPH_CONSTANT) / data;
+    if (train.isMetricSystem){
+        if ([defaults  boolForKey:@"IsMetricSystem"]) {
+            // centimeters
+            speed = (train.wheelDiameter * KPH_CONSTANT) / data;
+        } else {
+            // centimeters in one inch = 2.54
+            speed = ( (train.wheelDiameter / CM_IN_CONSTANT) * MPH_CONSTANT) / data;
+        }
     } else {
-        speed = (diameter * MPH_CONSTANT) / data;
+        if ([defaults  boolForKey:@"IsMetricSystem"]) {
+            // centimeters in one inch = 0.3937
+            speed = ( (train.wheelDiameter / IN_CM_CONSTANT) * KPH_CONSTANT) / data;
+        } else {
+            // inches
+            speed = (train.wheelDiameter * MPH_CONSTANT) / data;
+        }
     }
+    
     return [[NSString stringWithFormat:@"%.2f", speed] floatValue];
 }
 

@@ -18,6 +18,10 @@
 @property (weak, nonatomic) IBOutlet UITextField *WheelDiameter;
 @property (weak, nonatomic) IBOutlet UITextField *Distance;
 
+@property (weak, nonatomic) IBOutlet UILabel *MaxSpeedMetricLabel;
+@property (weak, nonatomic) IBOutlet UILabel *WheelDiameterMetricLabel;
+@property (weak, nonatomic) IBOutlet UILabel *TotalDistanceMetricLabel;
+
 @property (weak, nonatomic) IBOutlet UIButton *ResetDistanceButton;
 @property (weak, nonatomic) IBOutlet UIButton *SaveButton;
 

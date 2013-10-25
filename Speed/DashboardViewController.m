@@ -45,6 +45,10 @@
     [[self tableView] reloadData];
 }
 
+-(void)viewWillDisappear:(BOOL)animated{
+    [super viewWillDisappear:animated];
+}
+
 - (void)viewDidUnload
 {
     [super viewDidUnload];
@@ -122,13 +126,20 @@
         cell.DistanceLabel.text = [NSString stringWithFormat:@"%.2f", train.distance];
         cell.LowBatteryImage.alpha = train.lowBattery ? 1 : 0;
         
+        if ([[NSUserDefaults standardUserDefaults] boolForKey:@"IsMetricSystem"]){
+            cell.DistanceMetricLabel.text = @"km";
+            cell.SpeedMetricLabel.text = @"km";
+        } else {
+            cell.DistanceMetricLabel.text = @"miles";
+            cell.SpeedMetricLabel.text = @"miles";
+        }
+        
         //Set the detail disclosure indicator
         //cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     }
     
     //Return the cell
     return cell;
-    
 }
 
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath

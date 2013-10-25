@@ -11,7 +11,7 @@
 
 @implementation TrainCell
 
-@synthesize SpeedLabel, TrainNameLabel, OnOffSwitch, LowBatteryImage, DistanceLabel, index;
+@synthesize SpeedLabel, TrainNameLabel, OnOffSwitch, LowBatteryImage, DistanceLabel, index, SpeedMetricLabel, DistanceMetricLabel;
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {

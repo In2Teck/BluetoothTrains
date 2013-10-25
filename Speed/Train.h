@@ -20,9 +20,10 @@
 @property BOOL onOff;
 @property float distance;
 @property BOOL lowBattery;
+@property BOOL isMetricSystem;
 @property (strong, nonatomic) NSString *uId;
 
-- (id) initWithName:(NSString*)initName style:(NSString*)initStyle speed:(float)initSpeed maxSpeed:(float)initMaxSpeed wheelDiameter:(float)initWheelDiameter onOff:(BOOL)initOnOff lowBattery:(BOOL)initLowBattery uId:(NSString*) initUId;
--(void) updateDistance:(float)data metricSystem:(BOOL)isMetricSystem;
+- (id) initWithName:(NSString*)initName style:(NSString*)initStyle speed:(float)initSpeed maxSpeed:(float)initMaxSpeed wheelDiameter:(float)initWheelDiameter onOff:(BOOL)initOnOff lowBattery:(BOOL)initLowBattery uId:(NSString*) initUId isMetricSystem:(BOOL)initIsMetricSystem;
+-(void) updateDistance:(float)data;
 
 @end

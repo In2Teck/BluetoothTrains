@@ -14,7 +14,7 @@
 
 @implementation NewItemViewController
 
-@synthesize TrainName, MaxSpeed, WheelDiameter, AddTrainButton, UId;
+@synthesize TrainName, MaxSpeed, WheelDiameter, AddTrainButton, UId, MaxSpeedMetricLabel, WheelDiameterMetricLabel;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -30,11 +30,19 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     [AddTrainButton addTarget:self action:@selector(addTrain) forControlEvents: UIControlEventTouchDown];
+    
+    if ([[NSUserDefaults standardUserDefaults] boolForKey:@"IsMetricSystem"]){
+        self.MaxSpeedMetricLabel.text = @"km";
+        self.WheelDiameterMetricLabel.text = @"cm";
+    } else {
+        self.MaxSpeedMetricLabel.text = @"miles";
+        self.WheelDiameterMetricLabel.text = @"in";
+    }
 }
 
 - (void) addTrain
 {
-    Train *train = [[Train alloc] initWithName:self.TrainName.text style:@"Classic" speed:0.0 maxSpeed:[self.MaxSpeed.text floatValue] wheelDiameter:[self.WheelDiameter.text intValue] onOff:NO lowBattery:NO uId:self.UId.text];
+    Train *train = [[Train alloc] initWithName:self.TrainName.text style:@"Classic" speed:0.0 maxSpeed:[self.MaxSpeed.text floatValue] wheelDiameter:[self.WheelDiameter.text intValue] onOff:NO lowBattery:NO uId:self.UId.text isMetricSystem:[[NSUserDefaults standardUserDefaults] boolForKey:@"IsMetricSystem"] ];
     [[DataHandling sharedInstance] addTrain:train];
 }
 

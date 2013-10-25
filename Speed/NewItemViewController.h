@@ -17,4 +17,7 @@
 @property (weak, nonatomic) IBOutlet UITextField *UId;
 @property (weak, nonatomic) IBOutlet UIButton *AddTrainButton;
 
+@property (weak, nonatomic) IBOutlet UILabel *MaxSpeedMetricLabel;
+@property (weak, nonatomic) IBOutlet UILabel *WheelDiameterMetricLabel;
+
 @end

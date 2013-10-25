@@ -14,11 +14,13 @@
     NSMutableArray *tableData;
     NSArray *paths;
     NSString *stringsPlistPath;
+    NSMutableString *frame;
 }
 
 @property (strong, nonatomic) NSMutableArray *tableData;
 @property (strong, nonatomic) NSArray *paths;
 @property (strong, nonatomic) NSString *stringsPlistPath;
+@property (strong, nonatomic) NSMutableString *frame;
 
 + (DataHandling*) sharedInstance;
 - (void) loadTextFile;
@@ -27,7 +29,7 @@
 - (BOOL) replaceTrainAtIndex:(NSUInteger) index withObject:(Train*) train;
 - (Train*) getTrainAtIndex:(NSUInteger) index;
 - (BOOL) updateTrainValues:(NSString*)frame;
-- (BOOL) validateValues:(NSArray*)array;
-- (float) calculateSpeed:(float)data wheelDiameter:(float)diameter metricSystem:(BOOL)isMetricSystem;
-
+- (BOOL) validateValues:(NSString*)trainId sensor:(NSString*)sensorId dataLength:(NSString*)dataFieldLength data:(NSString*)dataField check:(NSString*)checksum;
+;
+- (float) calculateSpeed:(float)data sourceTrain:(Train*)train;
 @end
