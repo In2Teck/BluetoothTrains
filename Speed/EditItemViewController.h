@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "DataHandling.h"
 
-@interface EditItemViewController : UIViewController
+@interface EditItemViewController : UIViewController <UITextFieldDelegate>
 
 @property (strong, nonatomic) Train *TrainObject;
 @property int TrainIndex;

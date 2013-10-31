@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "DataHandling.h"
 
-@interface NewItemViewController : UIViewController
+@interface NewItemViewController : UIViewController <UITextFieldDelegate>
 
 @property (weak, nonatomic) IBOutlet UITextField *TrainName;
 @property (weak, nonatomic) IBOutlet UITextField *MaxSpeed;

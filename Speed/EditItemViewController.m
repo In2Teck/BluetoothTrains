@@ -16,7 +16,12 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        // Custom initialization
+        //Register to receive an update when the app goes into the backround
+        //It will call our "appEnteredBackground method
+        [[NSNotificationCenter defaultCenter] addObserver:self
+                                                 selector:@selector(appEnteredBackground)
+                                                     name:UIApplicationDidEnterBackgroundNotification
+                                                   object:nil];
     }
     return self;
 }
@@ -70,6 +75,9 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     
+    MaxSpeed.keyboardType = UIKeyboardTypeNumberPad;
+    WheelDiameter.keyboardType = UIKeyboardTypeNumberPad;
+    
 }
 
 - (void) saveTrain
@@ -96,6 +104,46 @@
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
     return YES;
+}
+
+/* SCROLL KEYBOARD ON TEXT FIELD EDIT */
+
+- (void) animateTextField: (UITextField*) textField up: (BOOL) up
+{
+    const int movementDistance = 80; // tweak as needed
+    const float movementDuration = 0.3f; // tweak as needed
+    
+    int movement = (up ? -movementDistance : movementDistance);
+    
+    [UIView beginAnimations: @"anim" context: nil];
+    [UIView setAnimationBeginsFromCurrentState: YES];
+    [UIView setAnimationDuration: movementDuration];
+    self.view.frame = CGRectOffset(self.view.frame, 0, movement);
+    [UIView commitAnimations];
+}
+
+- (void)textFieldDidBeginEditing:(UITextField *)textField
+{
+    [self animateTextField: textField up: YES];
+}
+
+
+- (void)textFieldDidEndEditing:(UITextField *)textField
+{
+    [self animateTextField: textField up: NO];
+}
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+    [textField resignFirstResponder];
+    return YES;
+}
+//This is called when the app goes into the background.
+//We must reset the responder because animations will not be saved
+- (void)appEnteredBackground{
+    [self.TrainName resignFirstResponder];
+    [self.WheelDiameter resignFirstResponder];
+    [self.MaxSpeed resignFirstResponder];
 }
 
 @end
