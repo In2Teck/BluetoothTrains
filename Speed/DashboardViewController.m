@@ -128,10 +128,10 @@
         
         if ([[NSUserDefaults standardUserDefaults] boolForKey:@"IsMetricSystem"]){
             cell.DistanceMetricLabel.text = @"km";
-            cell.SpeedMetricLabel.text = @"km";
+            cell.SpeedMetricLabel.text = @"km/h";
         } else {
             cell.DistanceMetricLabel.text = @"miles";
-            cell.SpeedMetricLabel.text = @"miles";
+            cell.SpeedMetricLabel.text = @"mph";
         }
         
         //Set the detail disclosure indicator

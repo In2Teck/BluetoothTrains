@@ -50,7 +50,7 @@
             self.Distance.text = [NSString stringWithFormat:@"%.2f", self.TrainObject.distance / MI_KM_CONSTANT];
         }
         
-        self.MaxSpeedMetricLabel.text = @"km";
+        self.MaxSpeedMetricLabel.text = @"km/h";
         self.TotalDistanceMetricLabel.text = @"km";
         self.WheelDiameterMetricLabel.text = @"cm";
         
@@ -63,7 +63,7 @@
             self.Distance.text = [NSString stringWithFormat:@"%.2f", self.TrainObject.distance / KM_MI_CONSTANT];
         }
         
-        self.MaxSpeedMetricLabel.text = @"miles";
+        self.MaxSpeedMetricLabel.text = @"mph";
         self.TotalDistanceMetricLabel.text = @"miles";
         self.WheelDiameterMetricLabel.text = @"in";
     }

@@ -34,10 +34,10 @@
     [AddTrainButton addTarget:self action:@selector(addTrain) forControlEvents: UIControlEventTouchDown];
     
     if ([[NSUserDefaults standardUserDefaults] boolForKey:@"IsMetricSystem"]){
-        self.MaxSpeedMetricLabel.text = @"km";
+        self.MaxSpeedMetricLabel.text = @"km/h";
         self.WheelDiameterMetricLabel.text = @"cm";
     } else {
-        self.MaxSpeedMetricLabel.text = @"miles";
+        self.MaxSpeedMetricLabel.text = @"mph";
         self.WheelDiameterMetricLabel.text = @"in";
     }
     MaxSpeed.keyboardType = UIKeyboardTypeNumberPad;

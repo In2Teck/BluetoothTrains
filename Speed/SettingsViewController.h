@@ -10,7 +10,7 @@
 #import "DataHandling.h"
 //#import <ExternalAccessory/ExternalAccessory.h>
 
-@interface SettingsViewController : UIViewController <UIKeyInput>
+@interface SettingsViewController : UIViewController
 
 @property (strong, nonatomic) IBOutlet UISwitch *USMetricSystem;
 @property (strong, nonatomic) IBOutlet UISwitch *ISOMetricSystem;
