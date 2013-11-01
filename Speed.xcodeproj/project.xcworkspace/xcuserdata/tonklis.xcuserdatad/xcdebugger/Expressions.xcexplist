@@ -27,5 +27,13 @@
             </PersistentString>
          </PersistentStrings>
       </ContextState>
+      <ContextState
+         contextName = "-[NewItemViewController textFieldDidBeginEditing:]:NewItemViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "[textField valueForKey:@&quot;scroll&quot;]">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
    </ContextStates>
 </VariablesViewState>

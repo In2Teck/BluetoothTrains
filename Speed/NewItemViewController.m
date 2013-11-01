@@ -42,6 +42,10 @@
     }
     MaxSpeed.keyboardType = UIKeyboardTypeNumberPad;
     WheelDiameter.keyboardType = UIKeyboardTypeNumberPad;
+    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone){
+        UId.tag = 1;
+    }
+         
 }
 
 - (void) addTrain
@@ -79,13 +83,19 @@
 
 - (void)textFieldDidBeginEditing:(UITextField *)textField
 {
-    [self animateTextField: textField up: YES];
+    UIView *UIdTextFieldPhone = [textField viewWithTag:1];
+    if (UIdTextFieldPhone == nil){
+        [self animateTextField: textField up: YES];
+    }
 }
 
 
 - (void)textFieldDidEndEditing:(UITextField *)textField
 {
-    [self animateTextField: textField up: NO];
+    UIView *UIdTextFieldPhone = [textField viewWithTag:1];
+    if (UIdTextFieldPhone == nil){
+        [self animateTextField: textField up: NO];
+    }
 }
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField
